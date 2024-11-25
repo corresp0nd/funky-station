@@ -1377,48 +1377,68 @@
         reagent: MindbreakerToxin
         amount: -3.0
 
-# funkystation
-# TODO move these to _funkystation after funkychem is merged
-  - type: reagent
-    id: Hypothium
-    name: reagent-name-hypothium
-    group: Medicine
-    desc: reagent-desc-hypothium
-    physicalDesc: reagent-physical-desc-tart
-    flavor: medicine
-    color: "#C8317A"
-    metabolisms:
-        Medicine:
-          effects:
-            - !type:HealthChange
-              damage:
-                groups:
-                  Brute: 5
-                  Burn: 5
-                  Toxin: 5
-                  Bloodloss: 5
-            - !type:ModifyBleedAmount
-              amount: -1.0
+#funkystation
+- type: reagent
+  id: Hypothium
+  name: reagent-name-hypothium
+  group: Medicine
+  desc: reagent-desc-hypothium
+  physicalDesc: reagent-physical-desc-tart
+  flavor: medicine
+  color: "#c8317a"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: -8
+            Burn: -8
+            Toxin: -8
+            Airloss: -8
+      - !type:ModifyBleedAmount
+        amount: -1.0
 
-    - type: reagent
-      id: Pyroxadone
-      name: reagent-name-pyroxadone
-      group: Medicine
-      desc: reagent-desc-pyroxadone
-      physicalDesc: reagent-physical-desc-blazing
-      flavor: Burning
-      color: "#E69908"
-      worksOnDead: true
-      metabolisms:
-        Medicine:
-          effects:
-          - !type:HealthChange
-            conditions:
-            - !type:Temperature
-              max: 350.0 #needs to be balanced, is there a min param?
-            damage:
-              types:
-                Heat: -2 # needs to be balanced, should only offset heat dmg from pod
-                Cold: -5
-                Shock: -3
-                Caustic: -1 # same numbers as aloxa
+- type: reagent
+  id: Pyroxadone
+  name: reagent-name-pyroxadone
+  group: Medicine
+  desc: reagent-desc-pyroxadone
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: Burning
+  color: "#E69908"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:Temperature
+          min: 350.0
+        damage:
+          groups: # same as cryox
+            Airloss: -6
+            Brute: -4
+            Burn: -6
+            Toxin: -4
+
+- type: reagent
+  id: Ardthyrnkole
+  name: reagent-name-ardthyrnkole
+  group: Medicine
+  desc: reagent-desc-ardthyrnkole
+  physicalDesc: reagent-physical-desc-blazing
+  flavor: Spicy
+  color: "#894379"
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:Temperature
+          min: 350.0
+        damage:
+          types:
+            Cold: -7
+            Heat: -2
+            Shock: -5

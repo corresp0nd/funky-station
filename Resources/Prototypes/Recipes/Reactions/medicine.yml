@@ -679,6 +679,7 @@
 
 - type: reaction
   id: Pyroxadone
+  minTemp: 433
   reactants: #im pretty sure none of these are changed in funkychem but ill double check later
     Dexalin:
       amount: 1
@@ -688,3 +689,17 @@
       amount: 1
   products:
     Pyroxadone: 3
+
+- type: reaction
+  id: Ardthyrnkole
+  minTemp: 433
+  reactants:
+    Pyroxadone:
+      amount: 1
+    Plasma:
+      amount: 1
+      catalyst: true
+    Siderlac:
+      amount: 1
+  products:
+    Ardthyrnkole: 1

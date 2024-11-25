@@ -152,4 +152,7 @@ reagent-name-hypothium = hypothium
 reagent-desc-hypothium = A difficult to synthesize drug used to cure most wounds and clot blood.
 
 reagent-name-pyroxadone = pyroxadone
-reagent-desc-pyroxadone = Used to treat severe frostbite on corpses and some burn damage. Requires high temperatures to work.
+reagent-desc-pyroxadone = A chemical that works inversely of cryoxadone, requiring high temps in order to work. Heals most damage.
+
+reagent-name-ardthyrnkole = ardthyrnkole
+reagent-desc-ardthyrnkole = Used to treat severe frostbite on corpses by rapidly defrosting and regenerating frozen tissue. Requires high body temperatures to work.
