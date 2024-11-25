@@ -505,6 +505,16 @@
         - !type:ReagentThreshold
           reagent: Healium
           min: 3
+    Medicine:
+      effects:
+        - !type:HealthChange
+          damage:
+            groups:
+              Burn: -1
+              Toxin: -1
+              Brute: -1
+              # needs to be made into [x] to work well as a chem, use as a gas otherwise
+
 
 - type: reagent
   id: Nitrium

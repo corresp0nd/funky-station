@@ -1161,7 +1161,7 @@
         conditions:
         - !type:ReagentThreshold
           min: 12
-          
+
 - type: reagent
   id: Opporozidone #Name based of an altered version of the startreck chem "Opporozine"
   name: reagent-name-opporozidone
@@ -1376,3 +1376,49 @@
       - !type:AdjustReagent
         reagent: MindbreakerToxin
         amount: -3.0
+
+# funkystation
+# TODO move these to _funkystation after funkychem is merged
+  - type: reagent
+    id: Hypothium
+    name: reagent-name-hypothium
+    group: Medicine
+    desc: reagent-desc-hypothium
+    physicalDesc: reagent-physical-desc-tart
+    flavor: medicine
+    color: "#C8317A"
+    metabolisms:
+        Medicine:
+          effects:
+            - !type:HealthChange
+              damage:
+                groups:
+                  Brute: 5
+                  Burn: 5
+                  Toxin: 5
+                  Bloodloss: 5
+            - !type:ModifyBleedAmount
+              amount: -1.0
+
+    - type: reagent
+      id: Pyroxadone
+      name: reagent-name-pyroxadone
+      group: Medicine
+      desc: reagent-desc-pyroxadone
+      physicalDesc: reagent-physical-desc-blazing
+      flavor: Burning
+      color: "#E69908"
+      worksOnDead: true
+      metabolisms:
+        Medicine:
+          effects:
+          - !type:HealthChange
+            conditions:
+            - !type:Temperature
+              max: 350.0 #needs to be balanced, is there a min param?
+            damage:
+              types:
+                Heat: -2 # needs to be balanced, should only offset heat dmg from pod
+                Cold: -5
+                Shock: -3
+                Caustic: -1 # same numbers as aloxa
